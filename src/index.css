@@ -73,3 +73,8 @@ textarea {
   padding: 8px;
   margin: 10px 0;
 }
+
+.wrapper{
+  margin-left: 300px;
+  padding: 0 30px;
+}

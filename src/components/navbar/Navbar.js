@@ -1,17 +1,43 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
+import { UseLogout } from '../../hooks/UseLogout'
+import { UseAuthContext } from "../../hooks/UseAuthContext"
 
-const Navbar = () => {
+
+// styles & images
+import './Navbar.css'
+
+export default function Navbar() {
+  const { logout, isPending } = UseLogout()
+
+  const {user} = UseAuthContext()
+
   return (
-    <div className='nav'>
-       <h1>FinDash</h1>
-       <nav>
-            <Link to="/login">Login</Link>       
-            <Link to="/signup">Signup</Link>       
-            <Link to="/logout">Logout</Link>  
-            <p>Notification</p>     
-       </nav>
-    </div>
+    <nav className="navbar">
+      <ul>
+        <li className="logo">
+          <span>FinDash</span>
+        </li>
+        {
+          !user &&
+          <>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/signup">Signup</Link></li>
+          </>
+        }
+
+        {
+          user &&
+          <>
+            <li style={{marginRight:"20px"}}>Hi, {user.displayName}</li>
+            <li>
+              {!isPending && <button className="btn" onClick={logout}>Logout</button>}
+              {isPending && <button className="btn" disabled>Logging out</button>}
+            </li>
+            
+          </>
+        }
+
+      </ul>
+    </nav>
   )
 }
-
-export default Navbar
