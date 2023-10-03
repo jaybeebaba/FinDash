@@ -1,10 +1,9 @@
-import React from 'react'
-import "../../components/recent/Recent.css"
+import "./Recent.css"
 
-const Transactions = () => {
+const Recent = () => {
   return (
-    <div className='transactions wrapper'>
-        <h4>Transactions</h4>
+    <div className="recent">
+        <h4>Recent Transactions</h4>
         <ul>
           <li>
             <p>Name</p>
@@ -69,51 +68,9 @@ const Transactions = () => {
             <p>12/5/2025</p>
             <p>30.00</p>
           </li>
-          <li>
-            <p>Work</p>
-            <p>Income</p>
-            <p>Salary</p>
-            <p>12/5/2025</p>
-            <p>30.00</p>
-          </li>
-          <li>
-            <p>Work</p>
-            <p>Income</p>
-            <p>Salary</p>
-            <p>12/5/2025</p>
-            <p>30.00</p>
-          </li>
-          <li>
-            <p>Work</p>
-            <p>Income</p>
-            <p>Salary</p>
-            <p>12/5/2025</p>
-            <p>30.00</p>
-          </li>
-          <li>
-            <p>Work</p>
-            <p>Income</p>
-            <p>Salary</p>
-            <p>12/5/2025</p>
-            <p>30.00</p>
-          </li>
-          <li>
-            <p>Work</p>
-            <p>Income</p>
-            <p>Salary</p>
-            <p>12/5/2025</p>
-            <p>30.00</p>
-          </li>
-          <li>
-            <p>Work</p>
-            <p>Income</p>
-            <p>Salary</p>
-            <p>12/5/2025</p>
-            <p>30.00</p>
-          </li>
         </ul>
     </div>
   )
 }
 
-export default Transactions
+export default Recent

@@ -78,3 +78,19 @@ textarea {
   margin-left: 300px;
   padding: 0 30px;
 }
+
+.wrap{
+  background: var(--highlight-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap h3{
+  font-weight: 400;
+}
+
+h4{
+  margin-bottom: 20px;
+}

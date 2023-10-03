@@ -1,0 +1,7 @@
+.home {
+    display: grid;
+    grid-template-areas: "balance incomes expenses"
+                        "recent recent recent";
+    grid-auto-rows: 200px;
+    gap: 30px;
+}
