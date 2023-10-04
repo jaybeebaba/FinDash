@@ -22,10 +22,11 @@ const Transactions = () => {
   })):(<>No Transactions</>)
   useEffect(()=>{
     const current = JSON.parse(localStorage.getItem('transactions'))
-    const userTransaction = current.filter(transaction => transaction.createdBy.id === user.uid)
+    const userTransaction = current.filter(transaction => transaction.createdBy.id === user.uid).sort((a,b) =>   Date.parse(b.date) - Date.parse(a.date))
 
     setTransactions(userTransaction)
  }, [])
+ 
   return (
     <div className='transactions wrapper'>
         <h4>Transactions</h4>

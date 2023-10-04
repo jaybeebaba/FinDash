@@ -7,6 +7,7 @@ import './Signup.css'
 export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
   const [displayName, setDisplayName] = useState('')
 
   const {signup, error, isPending} = UseSignup()
@@ -46,6 +47,7 @@ export default function Signup() {
           value={displayName}
         />
       </label>
+      
       {error && <p className='error'>{error}</p>}
       {!isPending && <button className="btn">Sign up</button>}
       {isPending && <button className="btn" disabled>Loading</button>}
