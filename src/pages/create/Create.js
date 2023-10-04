@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Select from "react-select"
 import {UseAuthContext} from "../../hooks/UseAuthContext"
+import { v4 as uuidv4 } from 'uuid';
 // styles
 import './Create.css'
 import { useEffect } from 'react'
@@ -51,19 +52,36 @@ export default function Create() {
       return
     }
 
+    if(!type){
+      setFormError("Please select a transaction type")
+      return
+    }
+
     const createdBy = {
       name: user.displayName,
       id: user.uid
     }
 
-
-    const project = {
+    const transaction = {
       createdBy,
       name,
-      // details,
-      category: category.value
+      type: type.value,
+      date,
+      amount: parseFloat(amount).toFixed(2),
+      category: category.value,
+      id: uuidv4()
     }
-    
+     
+    const existingTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
+  
+    const updatedTransactions = [...existingTransactions, transaction];
+  
+    localStorage.setItem('transactions', JSON.stringify(updatedTransactions));
+    setAmount("")
+    setCategory("")
+    setName("")
+    setDate("")
+    setType("")
   }
 
   return (
@@ -107,7 +125,7 @@ export default function Create() {
         </label>
         
         <label>
-          <span>Project category:</span>
+          <span>Transaction category</span>
           <Select 
             options={type.value === "income" ? incomeCategories : expensesCategories}
             onChange={(option) => setCategory(option) }
