@@ -1,0 +1,16 @@
+.transactions > div{
+    display: flex;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.transactions  .input {
+        display: flex;
+        align-items: center;
+    
+}
+
+.transactions > div input{
+    width: 20px;
+
+}
