@@ -15,7 +15,6 @@ const Profile = () => {
           <h3>Name: {user.displayName}</h3>
           <p>Email: {user.email}</p>
           <p>UID: {user.uid}</p>
-          {/* Add more details if needed */}
         </div>
       )}
     </div>

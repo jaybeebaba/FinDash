@@ -54,3 +54,7 @@
 .sidebar .links .active img {
     filter: invert(60%);
 }
+
+@media screen and (max-width: 500px) {
+    
+}

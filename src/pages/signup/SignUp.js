@@ -7,7 +7,6 @@ import './Signup.css'
 export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [phoneNumber, setPhoneNumber] = useState('')
   const [displayName, setDisplayName] = useState('')
 
   const {signup, error, isPending} = UseSignup()

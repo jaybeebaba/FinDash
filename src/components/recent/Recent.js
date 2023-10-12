@@ -23,7 +23,7 @@ const Recent = () => {
   })):(<>No Transactions</>)
   useEffect(()=>{
      const current = JSON.parse(localStorage.getItem('transactions'))
-     const userTransaction = current.filter(transaction => transaction.createdBy.id === user.uid).sort((a,b) =>   Date.parse(b.date) - Date.parse(a.date))
+     const userTransaction = current?.filter(transaction => transaction.createdBy.id === user.uid).sort((a,b) =>   Date.parse(b.date) - Date.parse(a.date))
 
      setTransactions(userTransaction)
   }, [])
