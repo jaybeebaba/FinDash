@@ -3,15 +3,14 @@ import { UseAuthContext } from "../../hooks/UseAuthContext";
 import { useEffect, useState } from "react";
 
 const Expenses = () => {
-  const [expense, setExpense] = useState()
- const {user} = UseAuthContext()
+const [expense, setExpense] = useState()
+const {user} = UseAuthContext()
 
 const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
 
-
 useEffect(()=>{
-  const loggedInUserId = user.uid; 
-  
+  const loggedInUserId = user.uid;
+
   const expenseTransactionsForCurrentUser = transactions.filter(transaction => {
     return transaction.type === 'expense' && transaction.createdBy.id === loggedInUserId;
   });
